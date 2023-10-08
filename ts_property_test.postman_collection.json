@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "14f9a6eb-960f-4f44-9d54-e04244ae940c",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23950014"
+	},
+	"item": [
+		{
+			"name": "send message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<message>\n    <message>Hello, World!</message>\n    <sender>dauren@gmail.com</sender>\n</message>\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/message",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/message?sender=dauren@gmail.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message"
+					],
+					"query": [
+						{
+							"key": "sender",
+							"value": "dauren@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

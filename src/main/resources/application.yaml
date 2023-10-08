@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/debug}
+    username: ${DATASOURCE_USERNAME:debug}
+    password: ${DATASOURCE_PASSWORD:debug}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-group
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GOOGLE_USERNAME:putYourGoogleEmailHere}
+    password: ${GOOGLE_APP_PASSWORD:putYourGoogleAppPasswordHere}
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+
+    address: ${TARGET_EMAIL:someTargetEmail@gmail.com}
+
+
+
